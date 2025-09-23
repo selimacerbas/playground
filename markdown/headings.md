@@ -148,3 +148,19 @@ System_Boundary(b, "Payments Platform") {
 Rel(customer, api, "Sends requests over HTTPS")
 Rel(api, service, "Calls")
 Rel(service, db, "Reads/Writes")
+```
+
+
+```mermaid
+flowchart LR
+  subgraph Edge
+    CDN-->WAF-->GW[API Gateway]
+  end
+  subgraph Core
+    GW-->Auth-->Orders-->Payments-->DB[(Ledger)]
+    Orders-->Cache[(Redis)]
+  end
+  classDef store fill:#eef,stroke:#99f
+  class DB,Cache store
+```
+
