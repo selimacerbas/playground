@@ -1,0 +1,6 @@
+-r requirements-dev.txt
+
+numpy
+Cython
+numba
+pybind11
