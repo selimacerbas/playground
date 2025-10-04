@@ -1,2 +1,3 @@
-from typing import Union
+dic = {"cool", "this"}
 
+print(dic)
