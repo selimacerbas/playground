@@ -11,13 +11,13 @@ from fastapi.param_functions import Path
 from sqlalchemy.orm import Session
 
 from models import Todos
-from db import session_local
+from db import SessionLocal
 
 router = APIRouter()
 
 
 def get_db():
-    db = session_local()
+    db = SessionLocal()
     try:
         yield db
     finally:

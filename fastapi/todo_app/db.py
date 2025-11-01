@@ -10,9 +10,6 @@ engine = create_engine(
 )
 
 # We are telling that we goingto use session local and connect to this engine.
-session_local = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-base = declarative_base()
-
-# class Base(DeclarativeBase):
-#     pass
+Base = declarative_base()
